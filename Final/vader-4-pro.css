@@ -50,19 +50,20 @@
 }
 
 .xbox .stick {
-    height: 90px;
+    height: 82px;
     width: 90px;
 	filter: drop-shadow(0 0 8px black);
 }
 
 .xbox .stick.left {
 	background: center / 100% auto url(L%20Stick.png) no-repeat;
+	left: 13px;
 }
 
 .xbox .stick.right {
 	background: center / 100% auto url(R%20Stick.png) no-repeat;
-    top: 113px;
-    left: 279px;
+    top: 96px;
+    left: 271px;
 }
 
 .xbox .stick.left.pressed {
@@ -117,24 +118,26 @@
 }
 
 .xbox .button.a {
-    top: 101px;
-    left: 53px;
+    top: 89px;
+    left: 39px;
 	background: center / 100% auto url(A.png) no-repeat;
 }
 
 .xbox .button.b {
     top: 55px;
+	right: 22px;
 	background: center / 100% auto url(B.png) no-repeat;
 }
 
 .xbox .button.x {
     top: 53px;
+	 left: -8px;
 	background: center / 100% auto url(X.png) no-repeat;
 }
 
 .xbox .button.y {
-    left: 53px;
-    top: 5px;
+    left: 36px;
+    top: 9px;
 	background: center / 100% auto url(Y.png) no-repeat;
 }
 
@@ -162,8 +165,8 @@
 	--dpad-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, var(--d-pad-rotate-angle));
 	width: 123px;
     height: 123px;
-    top: 241px;
-    left: 219px;
+    top: 216px;
+    left: 224px;
 
 	filter: drop-shadow(0 0 8px black);
 
