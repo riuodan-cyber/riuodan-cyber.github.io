@@ -1,0 +1,276 @@
+:root {
+	--key-color: #12ff0000;
+
+	--d-pad-rotate-angle: 15deg;
+
+	--d-pad-translate: 8px;
+}
+
+.xbox .quadrant {
+	display: none;
+}
+
+/* .xbox .dpad > span {
+	display: none;
+} */
+
+#gamepads:before {
+	content: '';
+	display: block;
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+	background: var(--key-color) !important;
+	z-index: -1;
+}
+
+.controller.active {
+	background: center / 100% auto url(Body.png) no-repeat;
+	perspective: 2000px;
+}
+
+.xbox .meta {
+	position: absolute;
+	height: 19px;
+    width: 42px;
+    top: 374px;
+    left: 380px;
+
+	background: center / 100% auto url(Home.png) no-repeat;
+}
+
+.xbox .meta.pressed {
+	background-image: url(Home%20Active.png);
+}
+
+.xbox .sticks {
+    top: 139px;
+    left: 145px;
+}
+
+.xbox .stick {
+    height: 90px;
+    width: 90px;
+	filter: drop-shadow(0 0 8px black);
+}
+
+.xbox .stick.left {
+	background: center / 100% auto url(L%20Stick.png) no-repeat;
+}
+
+.xbox .stick.right {
+	background: center / 100% auto url(R%20Stick.png) no-repeat;
+    top: 113px;
+    left: 279px;
+}
+
+.xbox .stick.left.pressed {
+	background-image: url(L3.png);
+}
+
+.xbox .stick.right.pressed {
+	background-image: url(R3.png);
+}
+
+.xbox .arrows {
+	position: absolute;
+	width: 223px;
+    top: 118px;
+    left: 265px;
+}
+
+.xbox .arrows .back,
+.xbox .arrows .start {
+	width: 49px;
+	height: 45px;
+	opacity: 1;
+}
+
+.xbox .arrows .back {
+	background: center / 100% auto url(Select.png) no-repeat;
+}
+
+.xbox .arrows .start {
+	background: center / 100% auto url(Start.png) no-repeat;
+}
+
+.xbox .arrows .back.pressed {
+	background-image: url(Select%20Active.png);
+}
+
+.xbox .arrows .start.pressed {
+	background-image: url(Start%20Active.png);
+}
+
+.xbox .abxy {
+	width: 154px;
+    top: 110px;
+    left: 485px;
+}
+
+.xbox .abxy .button {
+	width: 52px;
+	height: 54px;
+
+	transition: margin 0.1s ease-in-out;
+}
+
+.xbox .button.a {
+    top: 101px;
+    left: 53px;
+	background: center / 100% auto url(A.png) no-repeat;
+}
+
+.xbox .button.b {
+    top: 55px;
+	background: center / 100% auto url(B.png) no-repeat;
+}
+
+.xbox .button.x {
+    top: 53px;
+	background: center / 100% auto url(X.png) no-repeat;
+}
+
+.xbox .button.y {
+    left: 53px;
+    top: 5px;
+	background: center / 100% auto url(Y.png) no-repeat;
+}
+
+.xbox .button.a.pressed {
+	margin-top: 2px;
+	background: center / 100% auto url(A%20Active.png) no-repeat;
+}
+
+.xbox .button.b.pressed {
+	margin-top: 2px;
+	background: center / 100% auto url(B%20Active.png) no-repeat;
+}
+
+.xbox .button.x.pressed {
+	margin-top: 2px;
+	background: center / 100% auto url(X%20Active.png) no-repeat;
+}
+
+.xbox .button.y.pressed {
+	margin-top: 2px;
+	background: center / 100% auto url(Y%20Active.png) no-repeat;
+}
+
+.xbox .dpad {
+	--dpad-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, var(--d-pad-rotate-angle));
+	width: 123px;
+    height: 123px;
+    top: 241px;
+    left: 219px;
+
+	filter: drop-shadow(0 0 8px black);
+
+	transform: var(--dpad-transform);
+	-webkit-transform: var(--dpad-transform);
+	-moz-transform: var(--dpad-transform);
+	-o-transform: var(--dpad-transform);
+
+	transition: transform 0.1s ease-in-out;
+
+	background: center / 100% auto url(D-Pad.png) no-repeat;
+}
+
+/* rotate3d(x, y, z, a) */
+.xbox .dpad:has(.up.pressed) {
+	--dpad-transform: translate3d(0, calc(-1 * var(--d-pad-translate)), -2px) rotate3d(1, 0, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.left.pressed) {
+	--dpad-transform: translate3d(calc(-1 * var(--d-pad-translate)), 0, -2px) rotate3d(0, -1, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.down.pressed) {
+	--dpad-transform: translate3d(0, var(--d-pad-translate), -2px) rotate3d(-1, 0, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.right.pressed) {
+	--dpad-transform: translate3d(var(--d-pad-translate), 0, -2px) rotate3d(0, 1, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.up.pressed ~ .left.pressed) {
+	--dpad-transform: translate3d(calc(-1 * var(--d-pad-translate)), calc(-1 * var(--d-pad-translate)), -2px) rotate3d(0.875, -0.875, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.down.pressed ~ .left.pressed) {
+	--dpad-transform: translate3d(calc(-1 * var(--d-pad-translate)), var(--d-pad-translate), -2px) rotate3d(-0.875, -0.875, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.down.pressed ~ .right.pressed) {
+	--dpad-transform: translate3d(var(--d-pad-translate), var(--d-pad-translate), -2px) rotate3d(-0.875, 0.875, 0, var(--d-pad-rotate-angle));
+}
+
+.xbox .dpad:has(.up.pressed ~ .right.pressed) {
+	--dpad-transform: translate3d(var(--d-pad-translate), calc(-1 * var(--d-pad-translate)), -2px) rotate3d(0.875, 0.875, 0, var(--d-pad-rotate-angle));
+}
+
+/* Color change for default GPV dpad indicators */
+/* .xbox .face {
+    filter: sepia(1) brightness(.5) hue-rotate(290deg) saturate(100);
+} */
+
+/* .xbox .face.down,
+.xbox .face.up {
+    left: 45px;
+}
+
+.xbox .face.right,
+.xbox .face.left {
+    top: 43px;
+} */
+
+.xbox .face.up {
+    left: 41px;
+    height: 42px;
+    width: 42px;
+    background: center / 100% auto url(D-U.png) no-repeat;
+}
+
+.xbox .face.down {
+    left: 41px;
+    height: 42px;
+    width: 42px;
+    background: center / 100% auto url(D-D.png) no-repeat;
+}
+
+.xbox .face.left {
+    width: 43px;
+    height: 42px;
+    top: 39px;
+    background: center / 100% auto url(D-L.png) no-repeat;
+}
+
+.xbox .face.right {
+    width: 43px;
+    height: 42px;
+    top: 39px;
+    background: center / 100% auto url(D-R.png) no-repeat;
+}
+
+
+.xbox .triggers {
+	width: 770px;
+	left: -10px;
+	top: 55px;
+}
+
+.xbox .trigger {
+	height: 95px;
+    filter: sepia(1) brightness(.5) hue-rotate(290deg) saturate(100);
+}
+
+.xbox .bumpers {
+	top: 53px;
+    width: 512px;
+    height: 61px;
+    left: 120px;
+}
+.xbox .bumper {
+	background: center / 100% auto url(LB.png) no-repeat;
+}
