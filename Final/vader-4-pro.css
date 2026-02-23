@@ -86,14 +86,19 @@
 	width: 49px;
 	height: 45px;
 	opacity: 1;
+	left: 30px;
 }
 
 .xbox .arrows .back {
 	background: center / 100% auto url(Select.png) no-repeat;
+	top: 30px;
 }
 
 .xbox .arrows .start {
 	background: center / 100% auto url(Start.png) no-repeat;
+	    position: absolute;
+    left: 143px;
+    top: 31px;
 }
 
 .xbox .arrows .back.pressed {
