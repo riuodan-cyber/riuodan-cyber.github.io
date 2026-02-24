@@ -287,3 +287,7 @@ position: absolute;
 	background: center / 100% auto url(LB.png) no-repeat;
 	background-position: center 10px;
 }
+.xbox .bumper.pressed {
+    background-position: center 27px;
+    opacity: 1;
+}
