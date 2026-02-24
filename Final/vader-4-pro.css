@@ -87,11 +87,12 @@
 	height: 45px;
 	opacity: 1;
 	left: 30px;
+		top: 30px;
+
 }
 
 .xbox .arrows .back {
 	background: center / 100% auto url(Select.png) no-repeat;
-	top: 30px;
 }
 
 .xbox .arrows .start {
