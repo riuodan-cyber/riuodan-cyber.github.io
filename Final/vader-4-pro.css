@@ -87,7 +87,8 @@
 	height: 45px;
 	opacity: 1;
 	left: 30px;
-
+position: absolute;
+			top: 30px;
 }
 
 .xbox .arrows .back {
@@ -284,4 +285,5 @@
 }
 .xbox .bumper {
 	background: center / 100% auto url(LB.png) no-repeat;
+	background-position: center 10px;
 }
