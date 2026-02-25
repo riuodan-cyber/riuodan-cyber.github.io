@@ -295,3 +295,32 @@ position: absolute;
     height: 61px;
 }
 
+.custom .trigger
+Specificity: (0,2,0)
+ {
+    width: 200px;
+    height: 127px;
+    background-image: url(r2_test.png);
+    background-repeat: no-repeat;
+}
+
+
+.custom .trigger.right {
+    float: right;
+    width: 200px;
+    height: 127px;
+    top: 0px;
+    left: 413px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    background-position-x: -1px;
+    position: absolute;
+}
+
+
+.custom .trigger.left {
+    float: left;
+    left: 147px;
+    background-position-x: 0px;
+    position: absolute;
+}
