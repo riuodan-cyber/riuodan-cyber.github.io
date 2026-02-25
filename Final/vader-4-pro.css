@@ -177,10 +177,10 @@ position: absolute;
 
 .xbox .dpad {
 	--dpad-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, var(--d-pad-rotate-angle));
-	width: 132px;
-    height: 126px;
-    top: 225px;
-    left: 209px;
+	width: 150px;
+    height: 150px;
+    top: 215px;
+    left: 202px;
 
 	filter: drop-shadow(0 0 8px black);
 
