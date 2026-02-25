@@ -58,8 +58,9 @@
 .xbox .stick.left {
 	background: center / 100%  url(L%20Stick.png) no-repeat;
 	left: -14px;
-    width: 105px;
+    width: 104px;
     height: 100px;
+	top: -8px;
 }
 
 .xbox .stick.right {
